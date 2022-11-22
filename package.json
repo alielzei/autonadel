@@ -4,10 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "database": "cd database && ./create.sh && cd ..",
+    "database": "cd database && rm data.db && sqlite3 data.db < schema.sql && cd ..",
     "dev": "npm run database && concurrently \"npm run server\" \"cd client && npm start\"",
     "server": "nodemon .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install"
   },
   "author": "",
   "license": "ISC",

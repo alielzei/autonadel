@@ -1,0 +1,24 @@
+.orderBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+
+.orderBarSpace {
+    position: relative;
+    background: none;
+}
+
+.orderButton {
+    position: absolute;
+    background-color: red;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.orderButton:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
