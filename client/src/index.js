@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { sendHttpRequest } from './utils';
 import './style.css'
 
-import Item from './components/item/Item';
-import OrderBottomBar from './components/order/OrderBottomBar';
+import Item from './components/Item';
+import OrderBottomBar from './components/OrderBottomBar';
 
 function App() {
     const [items, setItems] = useState()

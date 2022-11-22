@@ -1,8 +1,0 @@
-1- MVC PATTERN
-2- SINGLETON
-3- FACTORY
-4- SOMETHING IN REACT?
-
-Use cases:
-see the menu
-create an order

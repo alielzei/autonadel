@@ -1,4 +1,4 @@
-const db = require('../db').getDb() // our singleton
+const db = require('../db').getDb()
 
 class Item {
     name
@@ -8,11 +8,10 @@ class Item {
     kind
     item_id
 
-    // factory method
-    static fromDbRow(row) {
+    // BUILDER DESIGN PATTERN
+    static buildItemFromRow(row) {
         var item = new Item()
 
-        console.log(row)
         for (let key of Object.keys(item)) {
             item[key] = row[key]
         }
@@ -21,13 +20,17 @@ class Item {
     }
 }
 
+// MODEL
+
 module.exports.getItems = () => new Promise((res, rej) => {
     var items = []
     db.each("SELECT * FROM item", (err, row) => {
         if (err != null) return rej(err)
-        items.push(Item.fromDbRow(row))
+        items.push(Item.buildItemFromRow(row))
+
     }, (err) => {
         if (err != null) return rej(err)
         res(items)
+
     })
 })

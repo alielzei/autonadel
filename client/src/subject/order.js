@@ -20,9 +20,10 @@ class OrderSubject {
 
     addItem(item) {
         if(this.order[item.item_id]) {
-            this.order[item.item_id]++
+            this.order[item.item_id].amount++
         }else{
-            this.order[item.item_id] = 1
+            item.amount = 1
+            this.order[item.item_id] = item
         }
         this.notifyObservers()
     }
