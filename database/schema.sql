@@ -7,7 +7,7 @@ CREATE TABLE user (
 );
 
 CREATE TABLE item (
-    item_id,
+    item_id
     INTEGER PRIMARY KEY,
     name TEXT,
     description TEXT,
@@ -19,7 +19,8 @@ CREATE TABLE item (
 );
 
 CREATE TABLE bill (
-    bill_id INTEGER PRIMARY KEY,
+    bill_id
+    INTEGER PRIMARY KEY,
     user_id INT,
     name TEXT,
     description TEXT,

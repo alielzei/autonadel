@@ -6,15 +6,15 @@ class Item {
     ingredients
     price
     kind
+    item_id
 
     // factory method
     static fromDbRow(row) {
         var item = new Item()
 
-        for (const [column, value] of Object.entries(row)) {
-            if (column in item) {
-                item[column] = value
-            }
+        console.log(row)
+        for (let key of Object.keys(item)) {
+            item[key] = row[key]
         }
 
         return item
