@@ -21,16 +21,15 @@ class Item {
 }
 
 // MODEL
-
-module.exports.getItems = () => new Promise((res, rej) => {
+module.exports.getItems = () => new Promise((resolve, reject) => {
     var items = []
     db.each("SELECT * FROM item", (err, row) => {
-        if (err != null) return rej(err)
+        if (err != null) return reject(err)
         items.push(Item.buildItemFromRow(row))
 
     }, (err) => {
-        if (err != null) return rej(err)
-        res(items)
+        if (err != null) return reject(err)
+        resolve(items)
 
     })
 })

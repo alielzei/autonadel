@@ -1,3 +1,32 @@
 * {
     font-family: sans-serif;
 }
+
+.itemMenu {
+    position: relative;
+    width: 1000px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+
+.menuTitle {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 5px;
+}
+
+.orderTitle {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 5px;
+}
+
+.orderView {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 500px;
+    background-color: #ccc;
+    /* left: 50%;
+    transform: translateX(-50%); */
+}

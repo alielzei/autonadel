@@ -2,12 +2,6 @@
     font-family: sans-serif;
 }
 
-.itemMenu {
-    width: 1000px;
-    background-color: #eee;
-    margin: 0 auto;
-}
-
 .itemBlock {
     position: relative;
     width: 350px;

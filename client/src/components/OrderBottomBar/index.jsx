@@ -6,7 +6,6 @@ import './style.css'
 
 export default function OrderBottomBar(props) {
     const [order, setOrder] = useState({})
-    const [viewOrder, setView] = useState(true)
 
     useEffect(() => {
         orderSubject.registerObserver((newOrder) => {
@@ -15,16 +14,6 @@ export default function OrderBottomBar(props) {
     }, [])
 
     return <>
-        {viewOrder && <div className="orderView">
-            {Object.entries(order).map(([_, item], i) => {
-                return <div key={i}>
-                    {item.name}
-                    {" "}
-                    {item.amount}
-                </div>
-            }
-            )}
-        </div>}
         <div className='orderBar'>
             <div>
             </div>
@@ -32,7 +21,7 @@ export default function OrderBottomBar(props) {
                 SUBMIT ORDER
             </div>
             <div
-                onClick={() => setView(!viewOrder)}
+                onClick={props.viewOrderClick}
                 className="viewButton button">
                 VIEW ORDER
             </div>

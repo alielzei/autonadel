@@ -3,7 +3,7 @@
 class OrderSubject {
     observers = []
     order = {}
-
+    
     registerObserver(o) {
         this.observers.push(o)
     }
