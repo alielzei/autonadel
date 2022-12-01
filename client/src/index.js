@@ -17,7 +17,7 @@ function App() {
 
     useEffect(() => {
         orderSubject.registerObserver((newOrder) => {
-            setOrder(o => ({ ...o, ...newOrder }))
+            setOrder(o => ({ ...newOrder }))
         })
 
         sendHttpRequest('GET', '/api/item', true)
@@ -34,7 +34,9 @@ function App() {
     }, [])
 
     return <div>
-        <div>navbar here</div>
+        <div className='navbar'>
+            autonadel
+        </div>
         <div>
             <div className='itemMenu'>
                 <div className='menuTitle'>Menu:</div>

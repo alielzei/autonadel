@@ -3,6 +3,7 @@ import { useEffect } from "react"
 
 import orderSubject from '../../subject/order';
 import './style.css'
+import { sendHttpRequest } from '../../utils';
 
 export default function OrderBottomBar(props) {
     const [order, setOrder] = useState({})
@@ -13,11 +14,28 @@ export default function OrderBottomBar(props) {
         })
     }, [])
 
+    const submitOrder = () => {
+        sendHttpRequest('POST', '/api/order', false, order)
+            .then(res => {
+                if (res.error) {
+                    console.error(res.error)
+                }
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+    
     return <>
         <div className='orderBar'>
             <div>
             </div>
-            <div className="orderButton button">
+            <div 
+                className="orderButton button"
+                onClick={() => {
+                    submitOrder(order)
+                }}
+            >
                 SUBMIT ORDER
             </div>
             <div

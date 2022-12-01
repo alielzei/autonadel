@@ -7,13 +7,14 @@ class Item {
     price
     kind
     item_id
+    amount
 
     // BUILDER DESIGN PATTERN
-    static buildItemFromRow(row) {
+    static buildItemFromJson(json) {
         var item = new Item()
 
         for (let key of Object.keys(item)) {
-            item[key] = row[key]
+            item[key] = json[key]   
         }
 
         return item
@@ -25,7 +26,7 @@ module.exports.getItems = () => new Promise((resolve, reject) => {
     var items = []
     db.each("SELECT * FROM item", (err, row) => {
         if (err != null) return reject(err)
-        items.push(Item.buildItemFromRow(row))
+        items.push(Item.buildItemFromJson(row))
 
     }, (err) => {
         if (err != null) return reject(err)
@@ -33,3 +34,6 @@ module.exports.getItems = () => new Promise((resolve, reject) => {
 
     })
 })
+
+
+module.exports.Item = Item;

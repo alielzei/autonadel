@@ -18,8 +18,8 @@ CREATE TABLE item (
     available BOOLEAN DEFAULT 1
 );
 
-CREATE TABLE bill (
-    bill_id
+CREATE TABLE order (
+    order_id
     INTEGER PRIMARY KEY,
     user_id INT,
     name TEXT,

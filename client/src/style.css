@@ -30,3 +30,10 @@
     /* left: 50%;
     transform: translateX(-50%); */
 }
+
+.navbar {
+    background-color: #ccc; 
+    height: 50px;
+    line-height: 50px;
+    padding: 5px;
+}

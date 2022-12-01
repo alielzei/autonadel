@@ -27,6 +27,17 @@ class OrderSubject {
         }
         this.notifyObservers()
     }
+
+    removeItem(item) {
+        console.log(this.order)
+        console.log(this.order[item.item_id])
+        if(this.order[item.item_id] && this.order[item.item_id].amount === 1) {
+            delete this.order[item.item_id]
+        }else{
+            this.order[item.item_id].amount--
+        }
+        this.notifyObservers()
+    }
 }
 
 const orderSubject = new OrderSubject()
