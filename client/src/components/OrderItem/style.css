@@ -1,0 +1,49 @@
+* {
+    font-family: sans-serif;
+}
+
+.orderItemBlock {
+    position: relative;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.orderItemTitle {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.itemPrice {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #eee;
+    padding: 2px;
+
+}
+
+.itemBlock:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.orderItemCloseButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.orderItemCloseButton:hover {
+    opacity: 0.5;
+}
