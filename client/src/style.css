@@ -33,7 +33,24 @@
 
 .navbar {
     background-color: #ccc; 
+    display: flex;
+    flex-direction: row;
     height: 50px;
-    line-height: 50px;
-    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarTitle {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.userInfo {
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+.userFullName {
+    padding: 0 20px;
 }
