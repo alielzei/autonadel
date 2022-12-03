@@ -18,16 +18,11 @@ CREATE TABLE item (
     available BOOLEAN DEFAULT 1
 );
 
-CREATE TABLE bill (
+CREATE TABLE `order` (
     order_id
     INTEGER PRIMARY KEY,
     user_id INT,
-    name TEXT,
-    description TEXT,
-    price INT,
-    percent_discount DECIMAL(5, 4),
-    kind TEXT,
-    available BOOLEAN,
+    amount INT,
     items TEXT,
     FOREIGN KEY(user_id) REFERENCES user(user_id)
 );

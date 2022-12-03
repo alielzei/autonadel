@@ -4,12 +4,6 @@ const itemModel = require('../model/item');
 // CONTROLLER
 // base url here is api/item 
 router.get('/', async (req, res) => {    
-    // ADAPTER DESIGN PATTERN
-    
-    // there are two interfaces
-    // FROM: API
-    // TO: itemModel
-
     try {
         items = await itemModel.getItems()
         res.send(items)
