@@ -3,7 +3,7 @@
     bottom: 0;
     width: 1000px;
     height: 100px;
-    background-color: white;
+    background-color: #ccc;
     left: 50%;
     transform: translateX(-50%);
     padding-top: 10px;

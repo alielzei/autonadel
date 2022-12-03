@@ -1,8 +1,8 @@
-const DTO = require('./dto')
+const Factory = require('./factory')
 
 const db = require('../db').getDb()
 
-class User extends DTO {
+class User extends Factory {
     user_id
     email
     full_name

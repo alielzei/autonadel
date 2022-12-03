@@ -1,6 +1,8 @@
+const Factory = require('./factory')
+
 const db = require('../db').getDb()
 
-class Order {
+class Order extends Factory {
     order_id
     user_id
     name
@@ -8,18 +10,7 @@ class Order {
     percent_discount
     kind
     item_ids
-    amount 
-
-    // BUILDER DESIGN PATTERN
-    static buildOrderFromJson(json) {
-        var order = new Order()
-
-        for (let key of Object.keys(order)) {
-            order[key] = json[key]
-        }
-
-        return order
-    }
+    amount
 }
 
 // MODEL

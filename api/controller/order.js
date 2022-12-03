@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     data = req.body
     let items = []
     for(const [k, o] of Object.entries(data)) {
-        items.push(Item.buildItemFromJson(o))
+        items.push(Item.buildFromObject(o))
     }
 
     try {

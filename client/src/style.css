@@ -49,8 +49,14 @@
 .userInfo {
     font-size: 16px;
     padding: 0 20px;
+    flex-direction: row;
+    display: flex   ;
 }
 
 .userFullName {
     padding: 0 20px;
+}
+
+.loadingIndicator {
+    padding: 0 10px;
 }

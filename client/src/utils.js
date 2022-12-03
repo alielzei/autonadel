@@ -1,4 +1,8 @@
+import loadingSubject from "./subject/loading"
+
 export async function sendHttpRequest(method, url, expectData, body) {
+    loadingSubject.setLoading(true)
+
     let res = await fetch(`http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}${url}`, {
         method, 
         headers: {
@@ -17,6 +21,8 @@ export async function sendHttpRequest(method, url, expectData, body) {
     } else if (expectData){
         result.data = await res.json()
     }
+    
+    loadingSubject.setLoading(false)
     
     return result
 }

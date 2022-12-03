@@ -11,17 +11,24 @@ import orderSubject from './subject/order';
 import Item from './components/Item';
 import OrderBottomBar from './components/OrderBottomBar';
 import OrderItem from './components/OrderItem';
+import loadingSubject from './subject/loading';
 
 function App() {
     const [items, setItems] = useState()
     const [viewOrder, setView] = useState(true)
     const [user, setUser] = useState()
+    const [loading, setLoading] = useState()
 
     const [order, setOrder] = useState({})
 
     useEffect(() => {
         orderSubject.registerObserver((newOrder) => {
             setOrder(o => ({ ...newOrder }))
+        })
+
+        loadingSubject.registerObserver((l) => {
+            console.log(`new set loading value: ${l}`)
+            setLoading(l)
         })
 
         sendHttpRequest('GET', '/api/item', true)
@@ -64,18 +71,24 @@ function App() {
                         user && user.full_name
                     }
                 </div>
-                {
-                    !user && <button
-                        onClick={loginUser}
-                    >LOGIN</button>
-                }
-                {
-                    user && <button
-                        onClick={() => {
-                            setUser(undefined)
-                        }}
-                    >LOGOUT</button>
-                }
+                <div>
+                    {
+                        !user && <button
+                            onClick={loginUser}
+                        >LOGIN</button>
+                    }
+                    {
+                        user && <button
+                            onClick={() => {
+                                setUser(undefined)
+                            }}
+                        >LOGOUT</button>
+                    }
+                </div>
+                <div>
+                    {loading && <div className='loadingIndicator'>loading...</div>}
+
+                </div>
 
             </div>
         </div>
